@@ -1,0 +1,96 @@
+<!-- Site Name -->
+<title>SCAUNIFEI - EEL</title>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/todos_cursos">Cursos</a><i class="icon-angle-right"></i>
+                    <li class="active"><a href="/curso/eel">Engenharia Elétrica</a>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span4 center">
+                <img src="../img/cursos/eel.jpg" alt="EEL" title="EEL">
+            </div>
+
+            <div class="span8">
+
+                <h1>Sobre o curso</h1>
+
+                <h4><strong>Coordenador:</strong> Dean Bicudo Karolak</h4>
+
+                <h4><strong>Telefone/Ramal:</strong> (31) 3839-0882</h4>
+
+                <h4><strong>Email:</strong> <a href="mailto:eel.itabira@unifei.edu.br">eel.itabira@unifei.edu.br</a>
+                </h4>
+
+                <h4><strong>Sala:</strong> 2441</h4>
+
+                <h4><strong>Apresentação:</strong></h4>
+                <p align="justify"> O curso de Engenharia Elétrica da Universidade Federal de Itajubá campus Itabira tem
+                    por
+                    objetivo a formação de recursos humanos com sólido preparo científico e tecnológico para absorver,
+                    desenvolver, gerar e difundir conhecimentos na área de Engenharia Elétrica e em campos de atuação
+                    afins,
+                    colaborando para o desenvolvimento racional, ético e sustentável da sociedade. O foco do curso é a
+                    engenharia de potência, grande área que abrange os sistemas industriais e os sistemas de energia.
+                </p>
+
+                <h4><strong>Plano Pedagógico do Curso:</strong></h4>
+
+                <div class="span8 center">
+                    <form action="/ler/PPC_EEL.pdf" target="_blank" method="GET">
+                        <button class="btn btn-large btn-success" type="submit"><i class="icon-laptop icon-white"></i>
+                            Ler Online
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h1>Disciplinas</h1>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                {{#each disciplinas}}
+                <div class="li span4" style="margin-bottom: 1rem!important;">
+                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:400px;"></a>
+                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
+                {{/each}}
+            </div>
+        </div>
+</section>

@@ -1,0 +1,57 @@
+<head>
+    <!-- Site Name -->
+    <title>SCAUNIFEI - Portal do Administrador</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/admin">Portal do Administrador</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+<section id="maincontent">
+    <div class="container">
+        <div class="row">
+
+            {{#each errors}}
+            <div class="alert alert-danger">{{text}}</div>
+            {{else}}
+            {{/each}}
+
+            <div class="span12">
+                <h2>O que você deseja fazer?</h2>
+            </div>
+            <br> <br> <br> <br>
+            <div class="span12 center">
+                <button class="btn btn-large btn-theme" type="button" onclick="location.href='/admin/userslist'"><i
+                        class="icon-group"></i>
+                    Gerenciar usuários
+                </button>
+                <br> <br>
+                <button class="btn btn-large btn-theme" type="button" onclick="location.href='/admin/subjectslist'"><i
+                        class="icon-book"></i>
+                    Gerenciar disciplinas
+                </button>
+                <br> <br>
+                <button class="btn btn-large btn-theme" type="button" onclick="location.href='/admin/userslist'"><i
+                        class="icon-folder-open"></i>
+                    Gerenciar arquivos
+                </button>
+            </div>
+            <br> <br> <br>
+        </div>
+    </div>
+
+</section>

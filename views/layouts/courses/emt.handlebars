@@ -1,0 +1,105 @@
+<!-- Site Name -->
+<title>SCAUNIFEI - EMT</title>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/todos_cursos">Cursos</a><i class="icon-angle-right"></i>
+                    <li class="active"><a href="/curso/emt">Engenharia de Materiais</a>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span4 center">
+                <img src="../img/cursos/emt.jpg" alt="EMT" title="EMT">
+            </div>
+
+            <div class="span8">
+
+                <h1>Sobre o curso</h1>
+
+                <h4><strong>Coordenador:</strong> Marcio Roberto de Freitas</h4>
+
+                <h4><strong>Telefone/Ramal:</strong> (31) 3839-0896</h4>
+
+                <h4><strong>Email:</strong> <a href="mailto:emt.itabira@unifei.edu.br">emt.itabira@unifei.edu.br</a>
+                </h4>
+
+                <h4><strong>Sala:</strong> XXXX</h4>
+
+                <h4><strong>Apresentação:</strong></h4>
+                <p align="justify"> A área de Ciência e Engenharia de Materiais está associada com a geração e aplicação
+                    de
+                    conhecimentos que relacionem composição, estrutura e processamento de materiais às propriedades e
+                    aplicações dos mesmos, sendo que essas inter-relações compõem as atividades centrais dessa área de
+                    conhecimento. Portanto, envolve uma grande interdisciplinaridade das áreas básicas de Química,
+                    Física e
+                    Matemática com o estudo do processamento e da caracterização de materiais poliméricos, metálicos,
+                    cerâmicos e compósitos.
+                    <br>Além do enfoque nos processos de transformação da matéria e suas correlações com estrutura e
+                    propriedades, o engenheiro de materiais também deverá estar apto a desempenhar atividades de seleção
+                    de
+                    materiais em projetos multidisciplinares, além de possuir noções de administração, economia e
+                    controle
+                    de qualidade, habilidades estas necessárias para uma melhor atuação como engenheiro no atual mercado
+                    de
+                    trabalho.
+                </p>
+
+                <h4><strong>Plano Pedagógico do Curso:</strong></h4>
+
+                <div class="span8 center">
+                    <form action="/ler/PPC_EMT.pdf" target="_blank" method="GET">
+                        <button class="btn btn-large btn-success" type="submit"><i class="icon-laptop icon-white"></i>
+                            Ler Online
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h1>Disciplinas</h1>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                {{#each disciplinas}}
+                <div class="li span4" style="margin-bottom: 1rem!important;">
+                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:256px;"></a>
+                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
+                {{/each}}
+            </div>
+        </div>
+</section>

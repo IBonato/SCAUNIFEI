@@ -1,0 +1,73 @@
+<!-- Site Name -->
+<title>SCAUNIFEI - Disciplinas Básicas</title>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/todos_cursos">Cursos</a><i class="icon-angle-right"></i>
+                    <li class="active"><a href="/curso/base">Disciplinas Básicas</a>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span4 center">
+                <img src="../img/book.png" alt="Básicas" title="Básicas">
+            </div>
+
+            <div class="span8">
+
+                <h1>Sobre as disciplinas básicas</h1>
+
+                <p align="justify"> Gerenciado pelo ICPA (Instituto de Ciências Puras e Aplicadas), o núcleo básico é
+                    focado
+                    na sólida formação em matemática, física e química, além de
+                    incorporar componentes curriculares voltados a comunicação e expressão, economia, administração,
+                    ciências sociais e cidadania.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h1>Disciplinas</h1>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                {{#each disciplinas}}
+                <div class="li span4" style="margin-bottom: 1rem!important;">
+                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:256px;"></a>
+                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
+                {{/each}}
+            </div>
+        </div>
+</section>

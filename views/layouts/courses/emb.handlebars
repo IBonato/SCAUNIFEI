@@ -1,0 +1,138 @@
+<!-- Site Name -->
+<title>SCAUNIFEI - EMB</title>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/todos_cursos">Cursos</a><i class="icon-angle-right"></i>
+                    <li class="active"><a href="/curso/emb">Engenharia de Mobilidade</a>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span4 center">
+                <img src="../img/cursos/emb.png" alt="EMB" title="EMB">
+            </div>
+
+            <div class="span8">
+
+                <h1>Sobre o curso</h1>
+
+                <h4><strong>Coordenador:</strong> Iara Alves Martins de Souza</h4>
+
+                <h4><strong>Telefone/Ramal:</strong> (31) 3839-0825</h4>
+
+                <h4><strong>Email:</strong> <a href="mailto:emb.itabira@unifei.edu.br">emb.itabira@unifei.edu.br</a>
+                </h4>
+
+                <h4><strong>Sala:</strong> 2428</h4>
+
+                <h4><strong>Apresentação:</strong></h4>
+                <p align="justify"> Engenharia da mobilidade é um dos ramos da engenharia ao qual compete a construção e
+                    a
+                    manutenção de redes rodo-ferroviárias, além de portos e aeroportos, projeto de veículos, logística
+                    de
+                    transferência de produtos. embora importantíssimo, “mais do que noutros campos de engenharia, a
+                    engenharia dos transportes requer uma abordagem sistêmica de muitos projetos. outra distinção tem a
+                    ver
+                    com o fato de que enquanto os engenheiros civis e mecânicos desenham e constroem os seus objetos,
+                    entregando-os depois a operadores ou consumidores, os engenheiros de transportes continuam a estar
+                    ativamente envolvidos em operações, e na busca de eficiência e aperfeiçoamentos contínuos. eles
+                    estão,
+                    por conseguinte, envolvidos na análise de sistemas, supervisionando os resultados econômicos, os
+                    serviços prestados e o seu impacto nos utilizadores, assim como na qualidade de vida das cidades e
+                    da
+                    sociedade” vukan r. vuchic | professor universidade da pensilvânia, eua a engenharia da mobilidade é
+                    um
+                    ramo da engenharia ao qual compete a construção e a manutenção de redes rodo-ferroviárias, além de
+                    portos e aeroportos, projeto de veículos e logística de transferência de produtos. verifica-se, no
+                    brasil, a urgência de soluções para infraestrutura na área de transportes, fazendo o curso de
+                    engenharia
+                    da mobilidade extremamente necessário. os investimentos bilionários em infraestrutura (energia,
+                    transporte, saneamento e habitação) do programa de aceleração do crescimento (pac) dão a noção exata
+                    da
+                    grande importância do engenheiro de mobilidade para o desenvolvimento do país. os engenheiros dessa
+                    área
+                    são os responsáveis por projetos de construção e duplicação de estradas, construção, monitoração,
+                    manutenção e renovação da infraestrutura ferroviária , projetos de sinalização viária, operações do
+                    tráfego urbano, gestão e planejamento do transporte urbano de passageiros, além de desafogação de
+                    lugares onde ocorrem engarrafamentos. desenvolvem atividades de de planejamento, fabricação,
+                    operação e
+                    manutenção dos sistemas técnicos veiculares e de transporte. além disso, devem desenvolver uma visão
+                    holística do que significa atuar no campo da mobilidade, para planejar e gerenciar o deslocamento de
+                    pessoas e produtos. o profissional poderá atuar tanto no setor público (agência nacional de
+                    transportes
+                    terrestres - antt; departamento nacional de infra-estrutura de transportes - dnit, entre outros)
+                    quanto
+                    no setor privado, em administradoras de rodovias e empresas de engenharia que desenvolvem atividades
+                    nas
+                    áreas de logística e de transportes. além das disciplinas características dos cursos de engenharia,
+                    o
+                    currículo deve abranger: elementos de máquinas, sistemas motrizes mecânicos e elétricos, projeto
+                    veicular, sistemas digitais e de comunicação, mecânica dos solos, hidrologia e drenagem, análise
+                    estrutural, geoprocessamento, engenharia de tráfego, custos, planejamento urbano e regional,
+                    sistemas de
+                    controle de tráfego, planejamento de infraestrutura viária, sistemas de transporte público, operação
+                    e
+                    controle de sistemas de transportes de cargas, engenharia de manutenção, gestão da qualidade,
+                    logística,
+                    mecânica de locomotivas e de vagões, telecomunicações.
+                </p>
+
+                <h4><strong>Plano Pedagógico do Curso:</strong></h4>
+
+                <div class="span8 center">
+                    <form action="/ler/PPC_EMB.pdf" target="_blank" method="GET">
+                        <button class="btn btn-large btn-success" type="submit"><i class="icon-laptop icon-white"></i>
+                            Ler Online
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h1>Disciplinas</h1>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                {{#each disciplinas}}
+                <div class="li span4" style="margin-bottom: 1rem!important;">
+                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:256px;"></a>
+                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
+                {{/each}}
+            </div>
+        </div>
+</section>

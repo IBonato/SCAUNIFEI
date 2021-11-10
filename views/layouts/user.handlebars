@@ -1,0 +1,158 @@
+<head>
+  <!-- Site Name -->
+  <title>SCAUNIFEI - Perfil de {{user.name}}</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+          </li>
+          <li>Usuário<i class="icon-angle-right"></i>
+          </li>
+          <li><a href="/user">{{user.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+<section id="maincontent">
+  <div class="container">
+    <div class="row">
+
+      {{#each errors}}
+      <div class="alert alert-danger">{{text}}</div>
+      {{else}}
+      {{/each}}
+
+      <div class="span12">
+        <h1>Dados do Usuário: </h1>
+      </div>
+
+      <div class="row">
+        <div class="span4 center">
+          <img src="{{user.photourl}}" alt="{{user.name}} {{user.surname}}" title="{{user.name}} {{user.surname}}"
+            class="img-circle" style="width:512px;" class="lazyload" />
+          <br><br>
+          <button class="btn btn-small btn-theme" type="button" data-toggle="modal" data-target="#editfotomodal"><i
+              class="icon-picture icon-white"></i>
+            Alterar Foto
+          </button>
+
+          <div class="modal fade" id="editfotomodal" tabindex="-1" role="dialog" aria-labelledby="editfotomodal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editfotomodal">Alterar Foto</h5>
+                </div>
+                <div class="modal-body">
+                  <form action="/user/edit/photo" method="POST">
+                    <input type="hidden" name="id" value="{{user._id}}">
+                    <p>Insira a URL da nova imagem:</p>
+                    <input type="url" class="input-block-level" name="photourl"
+                      placeholder="Insira a nova URL da imagem" required>
+                </div>
+                <div class="modal-footer">
+                  <div class="span6 center">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                        class="icon-remove icon-white"></i>
+                      Cancelar
+                    </button>
+                    <button class="btn btn-success" type="submit"><i class="icon-ok icon-white"></i>
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="span8">
+
+          <h3>Dados Pessoais</h3>
+
+          <h5><strong>Nome:</strong> {{user.name}} {{user.surname}} </h5>
+
+
+          <h5><strong>Data de Nascimento:</strong>
+
+            <script>
+              var date = '{{user.birthday}}';
+              function FormataStringData(date) {
+                var dia = date.split("-")[2];
+                var mes = date.split("-")[1];
+                var ano = date.split("-")[0];
+
+                return ("0" + dia).slice(-2) + '/' + ("0" + mes).slice(-2) + '/' + ano;
+              }
+              document.write(FormataStringData(date))
+            </script>
+          </h5>
+
+          <h5><strong>Gênero:</strong> {{user.gender}}</h5>
+
+          <h5><strong>Email:</strong> {{user.email}}</h5>
+
+          <h3>Dados Institucionais</h3>
+
+          <h5><strong>RA:</strong> {{user.ra}}</h5>
+
+          <h5><strong>Curso:</strong> {{user.course}}</h5>
+
+          <h5><strong>Unidade Acadêmica:</strong> {{user.institute}}</h5>
+
+          <button style="float: right;" class="btn btn-danger" type="button" data-toggle="modal"
+            data-target="#deletemodal"><i class="icon-trash icon-white"></i>
+            Excluir conta
+          </button>
+          <form action="" method="GET">
+            <button style="float: right;" class="btn btn-theme" type="button"
+              onclick="location.href='/user/edit/{{user._id}}'"><i class="icon-edit icon-white"></i>
+              Editar dados
+            </button>
+          </form>
+
+          <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deletemodal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deletemodal">Excluir Conta</h5>
+                </div>
+                <div class="modal-body">
+                  <p>Você tem certeza que deseja excluir sua conta? Essa ação não pode ser desfeita.</p>
+                </div>
+                <div class="modal-footer">
+                  <div class="span6 center">
+                    <form action="/user/delete" method="POST">
+                      <button type="button" class="btn btn-inverse" data-dismiss="modal"><i
+                          class="icon-remove icon-white"></i>
+                        Não
+                      </button>
+                      <input type="hidden" name="id" value="{{user._id}}">
+                      <button class="btn btn-danger" type="submit"><i class="icon-ok icon-white"></i>
+                        Sim
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+</section>

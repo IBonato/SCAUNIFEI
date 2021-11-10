@@ -1,0 +1,199 @@
+<head>
+    <!-- Site Name -->
+    <title>SCAUNIFEI - Editar dados de {{user.name}}</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li>Usuário<i class="icon-angle-right"></i>
+                    </li>
+                    </li>
+                    <li><a href="/user">{{user.name}}</a><i class="icon-angle-right"></i></li>
+                    <li><a href="/user/edit/{{user._id}}">Editar Dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+<section id="maincontent">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+
+                <h1>Editar Dados</h1>
+                <p>Obs.: caso queira alterar somente seus dados e não sua senha, não preencha os últimos dois campos.
+                </p>
+                <br>
+
+                <form action="" method="POST" role="form">
+                    <div class="row">
+
+                        <input type="hidden" name="id" value="{{user._id}}">
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="text">Nome:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="name" placeholder="Insira o seu nome"
+                                pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]{3,30}"
+                                title="O nome deve conter somente letras e ter no mínimo 3 caracteres."
+                                value="{{user.name}}" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="text">Sobrenome:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="surname"
+                                placeholder="Insira o seu sobrenome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ ]{3,30}"
+                                title="O sobrenome deve conter somente letras e ter no mínimo 3 caracteres."
+                                value="{{user.surname}}" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="email" class="control-label">Email:</label>
+                            </div>
+                            <input type="email" class="input-block-level" name="email" placeholder="Insira o seu email"
+                                value="{{user.email}}" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="ra" class="control-label">Registro Acadêmico:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="ra" placeholder="Insira o seu RA"
+                                title="O RA é composto somente por números (5 dígitos na versão antiga e 10 na atual)"
+                                minlength="5" maxlength="10" pattern="[0-9]+" value="{{user.ra}}" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="institute">Unidade Acadêmica:</label>
+                            </div>
+                            <select name="institute" class="input-block-level" required>
+                                <option value="{{user.institute}}">- {{user.institute}} -</option>
+                                <option value="ICT - Instituto de Ciências Tecnológicas">Instituto de Ciências
+                                    Tecnológicas (ICT)
+                                </option>
+                                <option value="IEI - Instituto de Engenharias Integradas">Instituto de Engenharias
+                                    Integradas (IEI)
+                                </option>
+                                <option value="ICPA - Instituto de Ciências Puras e Aplicadas">Instituto de Ciências
+                                    Puras e Aplicadas (ICPA)</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="course">Curso:</label>
+                            </div>
+                            <select name="course" class="input-block-level" required>
+                                <option value="{{user.course}}">- {{user.course}} -</option>
+                                <option value="EAM - Engenharia Ambiental">Engenharia Ambiental</option>
+                                <option value="EMB - Engenharia de Mobilidade">Engenharia de Mobilidade</option>
+                                <option value="ECO - Engenharia de Computação">Engenharia de Computação</option>
+                                <option value="ECA - Engenharia de Controle e Automação">Engenharia de Controle e
+                                    Automação</option>
+                                <option value="EMT - Engenharia de Materiais">Engenharia de Materiais</option>
+                                <option value="EPR - Engenharia de Produção">Engenharia de Produção</option>
+                                <option value="ESS - Engenharia de Saúde e Segurança">Engenharia de Saúde e Segurança
+                                </option>
+                                <option value="EEL - Engenharia Elétrica">Engenharia Elétrica</option>
+                                <option value="EME - Engenharia Mecânica">Engenharia Mecânica</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="date">Data de Nascimento:</label>
+                            </div>
+                            <input type="date" class="input-block-level" id="birthday" name="birthday"
+                                value="{{birthday}}" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="gender">Gênero:</label>
+                            </div>
+                            <select name="gender" class="input-block-level">
+                                <option value="{{user.gender}}">- {{user.gender}} -</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Outro">Prefiro não dizer</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="oldpassword" class="control-label">Senha Atual:</label>
+                            </div>
+                            <input type="password" class="input-block-level" name="oldpassword"
+                                placeholder="Insira sua senha atual por segurança"
+                                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="newpassword" class="control-label">Nova senha:</label>
+                            </div>
+                            <input type="password" class="input-block-level" name="newpassword" id="newpassword"
+                                onkeyup="check_pwd();" placeholder="Insira sua nova senha caso queira altera-la"
+                                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                title="A senha deve conter ao menos uma letra maiúscula, uma minúscula, um número ou caractere especial e ter 8 ou mais caracteres.">
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="cpassword" class="control-label">Confirmar senha:</label>
+                            </div>
+                            <input type="password" class="input-block-level" name="cpassword" id="cpassword"
+                                onkeyup="check_pwd();" placeholder="Insira sua nova senha novamente"
+                                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                            <span id='message'></span>
+                        </div>
+
+                        <script>
+                            var check_pwd = function () {
+                                if (document.getElementById('newpassword').value == '' && document.getElementById('cpassword').value == '') {
+                                    document.getElementById('message').innerHTML = '';
+                                    document.getElementById("success").disabled = false;
+                                }
+                                else if (document.getElementById('newpassword').value ==
+                                    document.getElementById('cpassword').value) {
+                                    document.getElementById('message').style.color = 'green';
+                                    document.getElementById('message').innerHTML = 'As senhas digitas coincidem.';
+                                    document.getElementById("success").disabled = false;
+                                } else {
+                                    document.getElementById('message').style.color = 'red';
+                                    document.getElementById('message').innerHTML = 'As senhas digitas não coincidem.';
+                                    document.getElementById("success").disabled = true;
+                                }
+                            }
+                        </script>
+
+                        <div class="span12 text-center">
+                            <button class="btn btn-large btn-danger" type="button" onclick="location.href='/user'"><i
+                                    class="icon-remove icon-white"></i>
+                                Cancelar
+                            </button>
+                            <button id="success" class="btn btn-large btn-success" type="submit"><i
+                                    class="icon-ok icon-white"></i>
+                                Concluir
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+</section>

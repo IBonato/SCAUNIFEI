@@ -1,0 +1,106 @@
+<!-- Site Name -->
+<title>SCAUNIFEI - EPR</title>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/todos_cursos">Cursos</a><i class="icon-angle-right"></i>
+                    <li class="active"><a href="/curso/epr">Engenharia de Produção</a>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span4 center">
+                <img src="../img/cursos/epr.jpg" alt="EPR" title="EPR">
+            </div>
+
+            <div class="span8">
+
+                <h1>Sobre o curso</h1>
+
+                <h4><strong>Coordenador:</strong> Henrique Duarte Carvalho</h4>
+
+                <h4><strong>Telefone/Ramal:</strong> (31) 3839-0892</h4>
+
+                <h4><strong>Email:</strong> <a href="mailto:epr.itabira@unifei.edu.br">epr.itabira@unifei.edu.br</a>
+                </h4>
+
+                <h4><strong>Sala:</strong> XXXX</h4>
+
+                <h4><strong>Apresentação:</strong></h4>
+                <p align="justify"> O engenheiro de produção necessita de sólida formação matemática, tecnológica,
+                    econômica
+                    e social. suas atividades incluem escolha de processos, administração do trabalho, segurança,
+                    projeto do
+                    produto, gestão ambiental, gestão da produção e da manutenção, de tal forma a produzir bens e
+                    serviços
+                    com qualidade, na quantidade requerida, no prazo estimado e a um preço competitivo. neste contexto,
+                    o
+                    papel do recém-formado é o de ativa participação nos esforços de desenvolvimento de sua comunidade e
+                    região. dessa forma, objetiva-se a formação de profissional competente e responsável, apto a atender
+                    às
+                    crescentes e variáveis demandas impostas pelas mudanças tecnológicas, sociais e econômicas. uma das
+                    características que se espera do profissional refere-se a sua capacidade de atuar como elemento
+                    gerador
+                    de oportunidades através de elementos de educação empreendedora constantes na abordagem pedagógica
+                    do
+                    curso.
+                </p>
+
+                <h4><strong>Plano Pedagógico do Curso:</strong></h4>
+
+                <div class="span8 center">
+                    <form action="/ler/PPC_EPR.pdf" target="_blank" method="GET">
+                        <button class="btn btn-large btn-success" type="submit"><i class="icon-laptop icon-white"></i>
+                            Ler Online
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <h1>Disciplinas</h1>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                {{#each disciplinas}}
+                <div class="li span4" style="margin-bottom: 1rem!important;">
+                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:256px;"></a>
+                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
+                {{/each}}
+            </div>
+        </div>
+</section>

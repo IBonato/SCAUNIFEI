@@ -1,0 +1,299 @@
+<head>
+    <!-- Site Name -->
+    <title>SCAUNIFEI - {{disciplina.name}}</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/curso/{{disciplina.course}}">{{disciplina.course}}</a><i class="icon-angle-right"></i>
+                    </li>
+                    <li><a href="/disciplina/{{disciplina.code}}">{{disciplina.name}}</a></li>
+                </ul>
+            </div>
+            <div class="span4">
+                <div class="search">
+                    <form action="/busca" method="GET" class="input-append">
+                        <input class="search-form" id="appendedPrependedInput" name="search" type="text"
+                            placeholder="Faça sua busca aqui..." required>
+                        <button class="btn btn-dark" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+<section id="maincontent">
+    <div class="container">
+        <div class="row">
+
+            {{#each errors}}
+            <div class="alert alert-danger">{{text}}</div>
+            {{else}}
+            {{/each}}
+
+            <div class="span12">
+                <h1>Dados da Disciplina: </h1>
+                <br>
+            </div>
+
+            <div class="row">
+
+                <div class="span4 center">
+                    <img data-src="{{disciplina.cover}}" alt="{{disciplina.name}}" title="{{disciplina.name}}"
+                        class="lazyload">
+                </div>
+
+                <div class="span8">
+
+                    <h4><strong>Nome:</strong> {{disciplina.name}}</h4>
+
+                    <h4><strong>Código:</strong> {{disciplina.code}}</h4>
+
+                    <h4><strong>Carga Horária:</strong> {{disciplina.points}} horas</h4>
+
+                    <h4><strong>Curso:</strong> {{disciplina.course}}</h4>
+
+                    <h4><strong>Unidade Acadêmica:</strong> {{disciplina.institute}}</h4>
+
+                    <h4><strong>Professores Responsáveis:</strong></h4>
+                    {{#each disciplina.teachers}}
+                    <button class="btn btn-small btn-theme" type="button" data-toggle="modal"
+                        data-target="#{{_id}}modal"><i class="icon-user icon-white"></i>
+                        {{name}} {{surname}}
+                    </button>
+
+                    <div class="modal fade" id="{{_id}}modal" tabindex="-1" role="dialog"
+                        aria-labelledby="{{_id}}modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="{{_id}}modalLabel">Dados de {{name}}</h5>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="span6 center">
+                                            <img src="{{photourl}}" alt="{{name}} {{surname}}"
+                                                title="{{name}} {{surname}}" class="img-circle" style="width:256px;"
+                                                class="lazyload">
+                                        </div>
+
+                                        <div class="span6">
+
+                                            <br>
+                                            <h3>Dados Pessoais</h3>
+
+                                            <h6><strong>Nome:</strong> {{name}} {{surname}} </h6>
+
+                                            <h6><strong>Gênero:</strong> {{gender}}</h6>
+
+                                            <h6><strong>Email:</strong> <a href="mailto:{{email}}"> {{email}}</a></h6>
+
+                                            <h3>Dados Institucionais</h3>
+
+                                            <h6><strong>Curso:</strong> {{course}}</h6>
+
+                                            <h6><strong>Unidade Acadêmica:</strong> {{institute}}</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-inverse" data-dismiss="modal">
+                                        Fechar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    <br>
+                    <br>
+                    <h4><strong>Tipo:</strong> {{disciplina.type}}</h4>
+
+                    <h4><strong>Modalidade:</strong> {{disciplina.modalidade}}</h4>
+
+                    <h4><strong>Tags:</strong></h4>
+                    <p align="justify">{{disciplina.tags}}</p>
+
+                    <h4><strong>Ementa:</strong> </h4>
+                    <p align="justify">{{disciplina.ementa}}</p>
+
+                    <h4><strong>Objetivos:</strong> </h4>
+                    <p align="justify">{{disciplina.objectives}}</p>
+
+                    <h4><strong>Bibliografia Básica:</strong> </h4>
+                    <p align="justify">{{disciplina.bibliography_basic}}</p>
+
+                    <h4><strong>Bibliografia Complementar:</strong> </h4>
+                    <p align="justify">{{disciplina.bibliography_comp}}</p>
+
+                    <h4><strong>Conteúdo:</strong> </h4>
+                    <p align="justify">{{disciplina.content}}</p>
+
+                    <h4><strong>Habilidades:</strong> </h4>
+                    <p align="justify">{{disciplina.skills}}</p>
+
+                    <h4><strong>Adicionada: <span id="datetime"></span></strong>
+                        <script>
+                            date = new Date('{{disciplina.added}}')
+                            document.getElementById("datetime").innerHTML = (("0" + date.getDate()).slice(-2)) + "/" + (("0" + (date.getMonth() + 1)).slice(-2)) + "/" + (date.getFullYear()) + " - " + (("0" + date.getHours()).slice(-2)) + ":" + (("0" + date.getMinutes()).slice(-2));
+                        </script>
+                    </h4>
+
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <div class="row">
+
+                {{#if user}}
+
+                <div class="span3 offset9">
+                    <button class="btn btn-large btn-success" type="button" data-toggle="modal"
+                        data-target="#addfile"><i class="icon-plus icon-white"></i>
+                        Adicionar arquivo
+                    </button>
+
+                    <div class="modal fade" id="addfile" tabindex="-1" role="dialog" aria-labelledby="addfile"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addfile">Adicionar arquivo a
+                                        {{disciplina.name}}
+                                    </h5>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="/disciplina/addfile" method="POST" enctype="multipart/form-data">
+                                        <div class="row">
+
+                                            <div class="span6 input-group">
+                                                <div class="text-left">
+                                                    <label for="text">Arquivo:</label>
+                                                </div>
+                                                <br>
+                                                <span class="input-group-btn">
+                                                    <input type="hidden" name="folderid"
+                                                        value="{{disciplina.folderid}}">
+                                                    <input type="file" class="input-block-level" name="nfile" required>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                        <div class="span6 center">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                    class="icon-remove icon-white"></i>
+                                                Cancelar
+                                            </button>
+                                            <button class="btn btn-success" type="submit"><i
+                                                    class="icon-ok icon-white"></i>
+                                                Concluir
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h1>Arquivos: </h1>
+                    <br><br>
+                    <div class="row">
+
+                        <div class="span10 offset2">
+
+                            {{#each arquivo}}
+
+                            <div class="call-action">
+                                <div class="text">
+                                    <h3>{{name}}</h3>
+                                </div>
+
+                                <div class="cta">
+                                    <button class="btn btn-large btn-success" type="button"
+                                        onClick="javascript:window.open('{{webViewLink}}', '_blank');"><i
+                                            class="icon-laptop icon-white"></i>
+                                        Ler Online
+                                    </button>
+                                    {{#if ../user}}
+                                    <div class="modal fade" id="deletefile{{id}}" tabindex="-1" role="dialog"
+                                        aria-labelledby="deletefilemodal" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deletefilemodal">Excluir arquivo</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Você tem certeza que deseja excluir o arquivo <b>{{name}}</b>?
+                                                        Essa ação não pode ser desfeita!
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="span6 center">
+                                                        <form action="/disciplina/deletefile" method="POST">
+                                                            <button type="button" class="btn btn-inverse"
+                                                                data-dismiss="modal"><i
+                                                                    class="icon-remove icon-white"></i>
+                                                                Não
+                                                            </button>
+                                                            <input type="hidden" name="fileid" value="{{id}}">
+                                                            <button class="btn btn-danger" type="submit"><i
+                                                                    class="icon-ok icon-white"></i>
+                                                                Sim
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-large btn-danger" type="button" data-toggle="modal"
+                                        data-target="#deletefile{{id}}"><i class="icon-trash"></i>
+                                    </button>
+                                    {{/if}}
+
+                                </div>
+                            </div>
+
+                            {{else}}
+                            <br>
+                            <div class="span6 offset2">
+                                <h1>Nenhum arquivo cadastrado nessa disciplina atualmente!</h1>
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

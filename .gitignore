@@ -1,0 +1,9 @@
+node_modules/*
+config/*
+.vscode/*
+.env
+google6c1459ba30ec5812.html
+
+!config/auth.js
+!config/gdrive.js
+!config/gmail.js

@@ -1,0 +1,92 @@
+<head>
+    <!-- Site Name -->
+    <title>SCAUNIFEI - Resetar Senha</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li class="active"><a>Resetar Senha</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+
+<section id="maincontent">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="text-center">
+                    <h2>Resetar Senha</h2>
+                    <p>
+                        Insira sua nova senha nos campos abaixo.
+                    </p>
+                </div>
+
+                <form action="" method="POST" role="form">
+                    <div class="row">
+
+                        <div class="span12 form-group">
+                            <div class="text-left">
+                                <label for="newpassword" class="control-label">Nova senha:</label>
+                            </div>
+                            <input type="password" class="input-block-level" name="newpassword" id="newpassword"
+                                onkeyup="check_pwd();" placeholder="Insira sua nova senha"
+                                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                title="A senha deve conter ao menos uma letra maiúscula, uma minúscula, um número ou caractere especial e ter 8 ou mais caracteres."
+                                required>
+                        </div>
+
+                        <div class="span12 form-group">
+                            <div class="text-left">
+                                <label for="cpassword" class="control-label">Confirmar senha:</label>
+                            </div>
+                            <input type="password" class="input-block-level" name="cpassword" id="cpassword"
+                                onkeyup="check_pwd();" placeholder="Insira sua senha novamente"
+                                pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                            <span id='message'></span>
+                        </div>
+
+                        <script>
+                            var check_pwd = function () {
+                                if (document.getElementById('newpassword').value == '' && document.getElementById('cpassword').value == '') {
+                                    document.getElementById('message').innerHTML = '';
+                                }
+                                else if (document.getElementById('newpassword').value ==
+                                    document.getElementById('cpassword').value) {
+                                    document.getElementById('message').style.color = 'green';
+                                    document.getElementById('message').innerHTML = 'As senhas digitadas coincidem.';
+                                    document.getElementById("success").disabled = false;
+                                } else {
+                                    document.getElementById('message').style.color = 'red';
+                                    document.getElementById('message').innerHTML = 'As senhas digitadas não coincidem.';
+                                    document.getElementById("success").disabled = true;
+                                }
+                            }
+                        </script>
+
+                        <div class="span12 text-center">
+                            <br>
+                            <button class="btn btn-large btn-danger" type="button" onclick="location.href='/'"><i
+                                    class="icon-remove icon-white"></i>
+                                Cancelar
+                            </button>
+                            <button class="btn btn-large btn-success" type="submit" id="success" disabled><i
+                                    class="icon-ok icon-white"></i>
+                                Concluir
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+</section>
