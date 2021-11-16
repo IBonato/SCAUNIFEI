@@ -105,7 +105,7 @@ html[xmlns] .slides {
 
 .flex-caption {
   background: rgba(0, 0, 0, .8);
-  margin-left: 270px;
+  margin-left: 210px;
   bottom: 5px;
   top: 5px;
   position: absolute;
@@ -132,7 +132,7 @@ html[xmlns] .slides {
     right: 0;
     bottom: 5px;
     top: 5px;
-    margin-left: 270px;
+    margin-left: 210px;
     padding: 10px 10px;
     text-align: justify;
     background: rgba(0, 0, 0, .8);
@@ -140,7 +140,7 @@ html[xmlns] .slides {
 
 
   .flex-caption h2 {
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: 0;
     padding-bottom: 0;
   }

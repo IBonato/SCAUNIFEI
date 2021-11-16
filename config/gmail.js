@@ -5,13 +5,13 @@ const nodemailer = require('nodemailer');
 async function createTransporter() {
     try {
         const oAuth2Client = new OAuth2(
-            process.env.OAUTH_CLIENT_ID,
-            process.env.OAUTH_SECRET,
+            process.env.OAUTH_CLIENT_ID_GMAIL,
+            process.env.OAUTH_SECRET_GMAIL,
             "https://developers.google.com/oauthplayground"
         );
 
         oAuth2Client.setCredentials({
-            refresh_token: process.env.REFRESH_TOKEN
+            refresh_token: process.env.GMAIL_REFRESH_TOKEN
         });
 
         const accessToken = await new Promise((resolve, reject) => {
@@ -30,8 +30,8 @@ async function createTransporter() {
             auth: {
                 type: 'OAuth2',
                 user: process.env.EMAIL_USER,
-                serviceClient: process.env.OAUTH_SERVICE_CLIENT_ID,
-                privateKey: process.env.OAUTH_SERVICE_PRIVATE_KEY,
+                serviceClient: process.env.OAUTH_SERVICE_ID_GMAIL,
+                privateKey: process.env.OAUTH_SERVICE_PRIVATE_KEY_GMAIL,
                 accessToken: accessToken
             }
         });

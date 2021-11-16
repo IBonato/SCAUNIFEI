@@ -84,7 +84,8 @@ app.use(express.static(path.join(__dirname, "static"), {
     etag: true,
     lastModified: true,
     setHeaders: (res, path) => {
-        if (path.endsWith('.handlebars') || path.endsWith('.js') || path.endsWith('.css') || path.endsWith('.png') || path.endsWith('.jpg') || path.endsWith('.ico')) {
+        if (path.endsWith('.handlebars') || path.endsWith('.js') || path.endsWith('.css')
+            || path.endsWith('.png') || path.endsWith('.jpg') || path.endsWith('.ico') || path.endsWith('.woff')) {
             res.setHeader('Cache-Control', 'max-age=31536000');
         }
     },

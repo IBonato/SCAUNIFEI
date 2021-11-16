@@ -113,43 +113,36 @@ router.post("/adduser", isAdmin, (req, res) => {
 
 // Route: add subj modal
 router.post("/addsubj", isAdmin, async (req, res) => {
-    const result = await Disciplina.exists({ code: req.body.code })
-    if (result == true) {
-        req.flash("error_msg", "Já existe uma disciplina com esse código cadastrada!")
+    let folderId = await gdrive.createFolder(req.body.code);
+
+    const newDisciplina = new Disciplina({
+        name: req.body.name,
+        code: req.body.code,
+        points: req.body.points,
+        institute: req.body.institute,
+        course: req.body.course,
+        type: req.body.type,
+        modalidade: req.body.modalidade,
+        teachers: req.body.teachers,
+        tags: req.body.tags.split(','),
+        ementa: req.body.ementa,
+        objectives: req.body.objectives,
+        content: req.body.content,
+        bibliography_basic: req.body.bibliography_basic,
+        bibliography_comp: req.body.bibliography_comp,
+        skills: req.body.skills,
+        cover: req.body.cover,
+        folderid: folderId
+    })
+
+    newDisciplina.save().then(() => {
+        req.flash("success_msg", "Disciplina cadastrada com sucesso!")
         res.redirect("/admin/subjectslist")
-    }
-    else {
-        let folderId = await gdrive.createFolder(req.body.code);
-
-        const newDisciplina = new Disciplina({
-            name: req.body.name,
-            code: req.body.code,
-            points: req.body.points,
-            institute: req.body.institute,
-            course: req.body.course,
-            type: req.body.type,
-            modalidade: req.body.modalidade,
-            teachers: req.body.teachers,
-            tags: req.body.tags.split(','),
-            ementa: req.body.ementa,
-            objectives: req.body.objectives,
-            content: req.body.content,
-            bibliography_basic: req.body.bibliography_basic,
-            bibliography_comp: req.body.bibliography_comp,
-            skills: req.body.skills,
-            cover: req.body.cover,
-            folderid: folderId
-        })
-
-        newDisciplina.save().then(() => {
-            req.flash("success_msg", "Disciplina cadastrada com sucesso!")
-            res.redirect("/admin/subjectslist")
-        }).catch((err) => {
-            req.flash("error_msg", "Erro ao cadastrar disciplina, tente novamente")
-            res.redirect("/admin/subjectslist")
-            console.log(err)
-        })
-    }
+    }).catch((err) => {
+        req.flash("error_msg", "Erro ao cadastrar disciplina, tente novamente")
+        res.redirect("/admin/subjectslist")
+        console.log(err)
+    })
 });
 
 // Route: user post edit

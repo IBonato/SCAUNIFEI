@@ -36,8 +36,8 @@
           <ul class="slides">
             {{#each lastadded}}
             <li data-thumb="{{cover}}">
-              <img data-src="{{cover}}" alt="{{name}}" style="width:256px;height:256px;" class="lazyload" />
-              <div class="flex-caption primary">
+              <img data-src="{{cover}}" alt="{{name}}" style="width:200px;height:200px;" class="lazyload" />
+              <div class="flex-caption">
                 <a href="/disciplina/{{code}}">
                   <h2>{{code}} - {{name}}</h2>
                 </a>
@@ -47,8 +47,8 @@
             </li>
             {{else}}
             <li data-thumb="img/book.png">
-              <img data-src="img/book.png" alt="Book" style="width:256px;height:400px;" class="lazyload" />
-              <div class="flex-caption primary">
+              <img data-src="img/book.png" alt="Book" style="width:200px;height:200px;" class="lazyload" />
+              <div class="flex-caption">
                 <a href="/">
                   <h2>Nenhuma disciplina cadastrada!</h2>
                 </a>

@@ -294,6 +294,22 @@
                 </div>
             </div>
 
+            {{#if user}}
+            <div class="row">
+                <div class="span12">
+                    <h1>Comentários: </h1>
+                    <br><br>
+                    <div class="row">
+                        <div class="span10 offset2">
+                            <div class="fb-comments"
+                                data-href="https://scaunifei.herokuapp.com/disciplina/{{disciplina.code}}"
+                                data-width="780" data-numposts="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+
         </div>
     </div>
 </section>

@@ -102,18 +102,13 @@
                                                 <select name="institute" class="input-block-level" required>
                                                     <option value="">- Selecione -</option>
                                                     <option value="ICT - Instituto de Ciências Tecnológicas">Instituto
-                                                        de
-                                                        Ciências Tecnológicas (ICT)
+                                                        de Ciências Tecnológicas (ICT)
                                                     </option>
                                                     <option value="IEI - Instituto de Engenharias Integradas">Instituto
-                                                        de
-                                                        Engenharias Integradas (IEI)
+                                                        de Engenharias Integradas (IEI)
                                                     </option>
                                                     <option value="ICPA - Instituto de Ciências Puras e Aplicadas">
-                                                        Instituto
-                                                        de
-                                                        Ciências Puras e Aplicadas
-                                                        (ICPA)</option>
+                                                        Instituto de Ciências Puras e Aplicadas (ICPA)</option>
                                                 </select>
                                             </div>
 
@@ -123,28 +118,32 @@
                                                 </div>
                                                 <select name="course" class="input-block-level" required>
                                                     <option value="">- Selecione -</option>
-                                                    <option value="EAM - Engenharia Ambiental">Engenharia Ambiental
+                                                    <option value="EAM - Engenharia Ambiental">
+                                                        Engenharia Ambiental (EAM)
                                                     </option>
-                                                    <option value="EMB - Engenharia de Mobilidade">Engenharia de
-                                                        Mobilidade
+                                                    <option value="EMB - Engenharia de Mobilidade">
+                                                        Engenharia de Mobilidade (EMB)
                                                     </option>
-                                                    <option value="ECO - Engenharia de Computação">Engenharia de
-                                                        Computação
+                                                    <option value="ECO - Engenharia de Computação">
+                                                        Engenharia de Computação (ECO)
                                                     </option>
-                                                    <option value="ECA - Engenharia de Controle e Automação">Engenharia
-                                                        de
-                                                        Controle e Automação</option>
-                                                    <option value="EMT - Engenharia de Materiais">Engenharia de
-                                                        Materiais
+                                                    <option value="ECA - Engenharia de Controle e Automação">
+                                                        Engenharia de Controle e Automação (ECA)
                                                     </option>
-                                                    <option value="EPR - Engenharia de Produção">Engenharia de Produção
+                                                    <option value="EMT - Engenharia de Materiais">
+                                                        Engenharia de Materiais (EMT)
                                                     </option>
-                                                    <option value="ESS - Engenharia de Saúde e Segurança">Engenharia de
-                                                        Saúde e
-                                                        Segurança</option>
-                                                    <option value="EEL - Engenharia Elétrica">Engenharia Elétrica
+                                                    <option value="EPR - Engenharia de Produção">
+                                                        Engenharia de Produção (EPR)
                                                     </option>
-                                                    <option value="EME - Engenharia Mecânica">Engenharia Mecânica
+                                                    <option value="ESS - Engenharia de Saúde e Segurança">
+                                                        Engenharia de Saúde e Segurança (ESS)
+                                                    </option>
+                                                    <option value="EEL - Engenharia Elétrica">
+                                                        Engenharia Elétrica (EEL)
+                                                    </option>
+                                                    <option value="EME - Engenharia Mecânica">
+                                                        Engenharia Mecânica (EME)
                                                     </option>
                                                 </select>
                                             </div>
@@ -247,7 +246,7 @@
                                 <td>{{ra}}</td>
                                 <td>{{course}}</td>
                                 <td>{{institute}}</td>
-                                <td>{{docente}}</td>
+                                <td name='user_status'>{{docente}}</td>
                                 <td>
 
                                     <div class="modal fade" id="edit{{_id}}" tabindex="-1" role="dialog"
@@ -319,18 +318,16 @@
                                                                         {{institute}} -</option>
                                                                     <option
                                                                         value="ICT - Instituto de Ciências Tecnológicas">
-                                                                        Instituto de Ciências
-                                                                        Tecnológicas (ICT)
+                                                                        Instituto de Ciências Tecnológicas (ICT)
                                                                     </option>
                                                                     <option
                                                                         value="IEI - Instituto de Engenharias Integradas">
-                                                                        Instituto de Engenharias
-                                                                        Integradas (IEI)
+                                                                        Instituto de Engenharias Integradas (IEI)
                                                                     </option>
                                                                     <option
                                                                         value="ICPA - Instituto de Ciências Puras e Aplicadas">
-                                                                        Instituto de Ciências
-                                                                        Puras e Aplicadas (ICPA)</option>
+                                                                        Instituto de Ciências Puras e Aplicadas (ICPA)
+                                                                    </option>
                                                                 </select>
                                                             </div>
 
@@ -343,27 +340,34 @@
                                                                     <option value="{{course}}">- {{course}} -
                                                                     </option>
                                                                     <option value="EAM - Engenharia Ambiental">
-                                                                        Engenharia Ambiental</option>
+                                                                        Engenharia Ambiental (EAM)
+                                                                    </option>
                                                                     <option value="EMB - Engenharia de Mobilidade">
-                                                                        Engenharia de Mobilidade</option>
+                                                                        Engenharia de Mobilidade (EMB)
+                                                                    </option>
                                                                     <option value="ECO - Engenharia de Computação">
-                                                                        Engenharia de Computação</option>
+                                                                        Engenharia de Computação (ECO)
+                                                                    </option>
                                                                     <option
                                                                         value="ECA - Engenharia de Controle e Automação">
-                                                                        Engenharia de Controle e
-                                                                        Automação</option>
+                                                                        Engenharia de Controle e Automação (ECA)
+                                                                    </option>
                                                                     <option value="EMT - Engenharia de Materiais">
-                                                                        Engenharia de Materiais</option>
+                                                                        Engenharia de Materiais (EMT)
+                                                                    </option>
                                                                     <option value="EPR - Engenharia de Produção">
-                                                                        Engenharia de Produção</option>
+                                                                        Engenharia de Produção (EPR)
+                                                                    </option>
                                                                     <option
                                                                         value="ESS - Engenharia de Saúde e Segurança">
-                                                                        Engenharia de Saúde e Segurança
+                                                                        Engenharia de Saúde e Segurança (ESS)
                                                                     </option>
-                                                                    <option value="EEL - Engenharia Elétrica">Engenharia
-                                                                        Elétrica</option>
-                                                                    <option value="EME - Engenharia Mecânica">Engenharia
-                                                                        Mecânica</option>
+                                                                    <option value="EEL - Engenharia Elétrica">
+                                                                        Engenharia Elétrica (EEL)
+                                                                    </option>
+                                                                    <option value="EME - Engenharia Mecânica">
+                                                                        Engenharia Mêcanica (EME)
+                                                                    </option>
                                                                 </select>
                                                             </div>
 
@@ -470,9 +474,18 @@
 
                         </tbody>
                     </table>
+                    <script>
+                        function change_text() {
+                            var elements = document.getElementsByName('user_status');
+                            [].forEach.call(elements, function (elem) {
+                                elem.textContent = elem.textContent ? elem.textContent.replace(/true/gi, 'Sim') : elem.innerText;
+                                elem.textContent = elem.textContent ? elem.textContent.replace(/false/gi, 'Não') : elem.innerText;
+                            });
+                        }
+                        window.onload = change_text;
+                    </script>
 
                 </div>
-
             </div>
 
         </div>

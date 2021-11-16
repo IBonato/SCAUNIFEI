@@ -1,0 +1,273 @@
+<head>
+    <!-- Site Name -->
+    <title>SCAUNIFEI - Adicionar turma</title>
+</head>
+
+<!-- Subintro
+================================================== -->
+<section id="subintro">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="/"><i class="icon-home icon-rounded active"></i></a><i class="icon-angle-right"></i>
+                    </li>
+                    <li class="active"><a href="/disciplina/addsubj">Adicionar turma</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo
+================================================== -->
+<section id="maincontent">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                <div class="text-center">
+                    <h2>Adicionar turma</h2>
+                </div>
+
+                <form action="" method="POST" role="form">
+                    <div class="row">
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="name">Nome da Disciplina:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="name"
+                                placeholder="Insira o nome da Disciplina (ex. 'Ciências do Ambiente')" minlength="2"
+                                required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="code">Código:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="code"
+                                placeholder="Insira o código da Disciplina (ex. 'EAMI30')" minlength="6" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="points">Carga Horária:</label>
+                            </div>
+                            <input type="text" class="input-block-level" name="points"
+                                placeholder="Insira a carga horária da Disciplina (ex. '32')" maxlength="3" required>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="institute">Unidade Acadêmica:</label>
+                            </div>
+                            <select class="input-block-level" name="institute" required>
+                                <option value="">- Selecione -</option>
+                                <option value="ICT - Instituto de Ciências Tecnológicas">Instituto
+                                    de Ciências Tecnológicas (ICT)
+                                </option>
+                                <option value="IEI - Instituto de Engenharias Integradas">Instituto
+                                    de Engenharias Integradas (IEI)
+                                </option>
+                                <option value="ICPA - Instituto de Ciências Puras e Aplicadas">
+                                    Instituto de Ciências Puras e Aplicadas (ICPA)
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="course">Curso:</label>
+                            </div>
+                            <select class="input-block-level" name="course" required>
+                                <option value="">- Selecione -</option>
+                                <option value="Base">Básica</option>
+                                <option value="EAM">Engenharia Ambiental (EAM)</option>
+                                <option value="EMB">Engenharia de Mobilidade (EMB)</option>
+                                <option value="ECO">Engenharia de Computação (ECO)</option>
+                                <option value="ECA">Engenharia de Controle e Automação (ECA)</option>
+                                <option value="EMT">Engenharia de Materiais (EMT)</option>
+                                <option value="EPR">Engenharia de Produção (EPR)</option>
+                                <option value="ESS">Engenharia de Saúde e Segurança (ESS)</option>
+                                <option value="EEL">Engenharia Elétrica (EEL)</option>
+                                <option value="EME">Engenharia Mêcanica (EME)</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="type">Tipo:</label>
+                            </div>
+                            <select class="input-block-level" name="type" required>
+                                <option value="">- Selecione -</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Férias">Férias</option>
+                                <option value="Ensino Individual">Ensino Individual</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="modalidade">Modalidade:</label>
+                            </div>
+                            <select class="input-block-level" name="modalidade" required>
+                                <option value="">- Selecione -</option>
+                                <option value="A Distância">A Distância</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Semi-Presencial">Semi-Presencial</option>
+                            </select>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="tags">Tags:</label>
+                            </div>
+                            <textarea class="input-block-level" name="tags" rows="2" required
+                                placeholder="Separadas por vírgula (ex. 'Ecologia, Ecossistemas')"
+                                minlength="2"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="ementa">Ementa:</label>
+                            </div>
+                            <textarea class="input-block-level" name="ementa" rows="3" required
+                                placeholder="Insira a ementa da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="objectives">Objetivos:</label>
+                            </div>
+                            <textarea class="input-block-level" name="objectives" rows="3" required
+                                placeholder="Insira os objetivos da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="bibliography_basic">Bibliografia Básica:</label>
+                            </div>
+                            <textarea class="input-block-level" name="bibliography_basic" rows="3" required
+                                placeholder="Insira a bibliografia básica da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="bibliography_comp">Bibliografia Complementar:</label>
+                            </div>
+                            <textarea class="input-block-level" name="bibliography_comp" rows="3" required
+                                placeholder="Insira a bibliografia complementar da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="content">Conteúdo:</label>
+                            </div>
+                            <textarea class="input-block-level" name="content" rows="4" required
+                                placeholder="Insira o conteúdo da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="skills">Habilidades:</label>
+                            </div>
+                            <textarea class="input-block-level" name="skills" rows="4" required
+                                placeholder="Insira as habilidades da Disciplina"></textarea>
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="cover">Capa da Disciplina:</label>
+                            </div>
+                            <input type="url" class="input-block-level" name="cover"
+                                placeholder="Insira o endereço da imagem da capa">
+                        </div>
+
+                        <div class="span6 form-group">
+                            <div class="text-left">
+                                <label for="course">Professor(es) Responsável(eis):</label>
+                            </div>
+                            <select class="input-block-level" name="teachers[0]" required>
+                                <option value="">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[1]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[2]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[3]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[4]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[5]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[6]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                            <select class="input-block-level" name="teachers[7]">
+                                <option value="000000000000000000000000">- Selecione -</option>
+                                {{#each users}}
+                                <option value="{{_id}}">{{name}} {{surname}} ({{course}})</option>
+                                {{else}}
+                                <option disabled selected>Nenhum professor cadastrado!</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="span12 text-center">
+                            <br>
+                            <button class="btn btn-large btn-danger" type="button" onclick="location.href='/'"><i
+                                    class="icon-remove icon-white"></i>
+                                Cancelar
+                            </button>
+                            <button class="btn btn-large btn-success" type="submit"><i class="icon-ok icon-white"></i>
+                                Concluir
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

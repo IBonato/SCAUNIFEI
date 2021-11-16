@@ -257,14 +257,12 @@ function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
-// Route: subject search .
-// Populate({ path: 'teachers', match: { name: regex } })
-// Multiple params { "name": req.body.username1, "password": req.body.password1 }
+// Route: subject search
 router.get('/busca', (req, res) => {
     if (req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         const termo = req.query.search;
-        Disciplina.find({ "$or": [{ code: regex }, { name: regex }, { institute: regex }, { tags: regex }] }).lean()
+        Disciplina.find({ "$or": [{ code: regex }, { name: regex }, { institute: regex }, { tags: regex }, { content: regex }] }).lean().populate('teachers')
             .sort({ code: '1' }).then((disciplinas) => {
                 if (disciplinas.length < 1) {
                     req.flash("info_msg", "Nenhuma disciplina corresponde ao termo pesquisado, tente novamente.")

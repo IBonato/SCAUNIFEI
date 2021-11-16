@@ -10,7 +10,7 @@ module.exports = {
     },
     docente: (req, res, next) => {
         if (req.isAuthenticated()) {
-            if (req.user.docente === true)
+            if (req.user.docente === true || req.user.isAdmin === true)
                 return next();
         }
         req.session.returnTo = req.originalUrl

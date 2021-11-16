@@ -1,6 +1,6 @@
-# SGAUNIFEI
+# SCAUNIFEI
 
-File managment system made in Node.js with MongoDB, supporting user register, edit and delete (by the Admin), file upload (by selected users) and download and search by multiple standards. You can see the deployed version on Heroku here: [SGAUNIFEI](https://sgaunifei.herokuapp.com).
+File sharing system made in Node.js with MongoDB, supporting user register, edit and delete, file upload (by selected users) and download and search by multiple standards. You can see the deployed version on Heroku here: [SCAUNIFEI](https://scaunifei.herokuapp.com).
 
 ## Installation
 
@@ -18,7 +18,7 @@ npm install
 C:\data\db
 ```
 
-* Add Mongo’s bin folder to the [Path Environment Variable](https://dangphongvanthanh.wordpress.com/2017/06/12/add-mongos-bin-folder-to-the-path-environment-variable/)
+* Add Mongo’s bin folder to the [Path Environment Variable](https://dangphongvanthanh.wordpress.com/2017/06/12/add-mongos-bin-folder-to-the-path-environment-variable/) (for Windows).
 
 ## Usage
 
@@ -26,10 +26,12 @@ C:\data\db
 
 ```node
 if (process.env.NODE_ENV == "production") {
-    module.exports = { mongoURI: "URL_to_your_Mongo_Server" }
+    //URL to your Cloud database
+    module.exports = { mongoURI: "mongodb+srv://user:password@cluster_name.mongodb.net/database_name?retryWrites=true&w=majority" }
 }
 else {
-    module.exports = { mongoURI: "mongodb://user:password@localhost:27017/nameofthedatabase" } //Local URL to access via Browser (27017 is Mongo default connection PORT)
+    //Local URL to access via Browser (27017 is Mongo default connection PORT)
+    module.exports = { mongoURI: "mongodb://user:password@localhost:27017/database_name" }
 }
 ```
 
@@ -54,12 +56,15 @@ db.createUser(
 )
 ```
 
-* Start the application in another terminal (```nodemon``` will automatically restart your application every time you make a change in any ```.js``` file and save it, if you don't have the package, you can install it globally with ```npm install -g nodemon```):
+* Create the files ```drive_key.json``` and ```gmail_key.json``` in the folder ```config/google``` containing the data for authentication with Google APIs.
+
+* Start the application in another terminal window (```nodemon``` will automatically restart your application every time you make a change in any ```.js``` file and save it, if you don't have the package, you can install it globally on your computer with ```npm install -g nodemon```):
+
 ```bash
 nodemon app.js
 ```
 
-* Open ```localhost:8081``` in your Browser.
+* Open ```localhost:8081``` in your Browser and have fun!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
