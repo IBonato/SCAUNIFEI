@@ -95,9 +95,10 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <a href="/disciplina/{{code}}" target="_blank"><img src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;"></a>
-                    <h4><a href="/disciplina/{{code}}" target="_blank">{{name}}</a></h4>
+                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
+                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>

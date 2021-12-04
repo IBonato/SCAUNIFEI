@@ -265,8 +265,28 @@ router.get('/busca', (req, res) => {
         Disciplina.find({ "$or": [{ code: regex }, { name: regex }, { institute: regex }, { tags: regex }, { content: regex }] }).lean().populate('teachers')
             .sort({ code: '1' }).then((disciplinas) => {
                 if (disciplinas.length < 1) {
-                    req.flash("info_msg", "Nenhuma disciplina corresponde ao termo pesquisado, tente novamente.")
-                    res.redirect("back")
+                    Disciplina.find().lean().populate({
+                        "path": 'teachers',
+                        "match": { "name": { "$in": regex } }
+                    }).sort({ code: '1' }).then((disciplinas) => {
+                        disciplinas = disciplinas.filter((disc) => {
+                            disc.teachers = disc.teachers.filter((teacher) => {
+                                return teacher != null;
+                            })
+                            return disc.teachers.length > 0;
+                        })
+                        if (disciplinas.length < 1) {
+                            req.flash("info_msg", "Nenhuma disciplina corresponde ao termo pesquisado, tente novamente.")
+                            res.redirect("back")
+                        }
+                        else {
+                            res.render("layouts/search", { disciplinas: disciplinas, termo: termo })
+                        }
+                    }).catch((err) => {
+                        req.flash("error_msg", "Ocorreu um erro ao pesquisar pelas disciplinas!")
+                        res.redirect("back")
+                        console.log(err)
+                    })
                 }
                 else {
                     res.render("layouts/search", { disciplinas: disciplinas, termo: termo })

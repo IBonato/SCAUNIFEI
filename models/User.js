@@ -16,7 +16,7 @@ const User = new Schema({
         maxLength: 50
     },
     ra: {
-        type: String,
+        type: Number,
         unique: true,
         maxLength: 10
     },

@@ -7,7 +7,7 @@ const Disciplina = mongoose.model("disciplinas")
 
 // Route: Basic subjects
 router.get("/base", (req, res) => {
-    Disciplina.find({ course: 'Base' }).lean().sort({ code: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'Base' }).lean().populate('teachers').sort({ code: '1' }).then((disciplinas) => {
         res.render("layouts/courses/basicas", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -18,7 +18,7 @@ router.get("/base", (req, res) => {
 
 // Route: ECO subjects
 router.get("/eco", (req, res) => {
-    Disciplina.find({ course: 'ECO' }).lean().sort({ code: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'ECO' }).lean().populate('teachers').sort({ code: '1' }).then((disciplinas) => {
         res.render("layouts/courses/eco", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -29,7 +29,7 @@ router.get("/eco", (req, res) => {
 
 // Route: EEL subjects
 router.get("/eel", (req, res) => {
-    Disciplina.find({ course: 'EEL' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EEL' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/eel", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -40,7 +40,7 @@ router.get("/eel", (req, res) => {
 
 // Route: EAM subjects
 router.get("/eam", (req, res) => {
-    Disciplina.find({ course: 'EAM' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EAM' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/eam", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -51,7 +51,7 @@ router.get("/eam", (req, res) => {
 
 // Route: EMB subjects
 router.get("/emb", (req, res) => {
-    Disciplina.find({ course: 'EMB' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EMB' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/emb", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -62,7 +62,7 @@ router.get("/emb", (req, res) => {
 
 // Route: ECA subjects
 router.get("/eca", (req, res) => {
-    Disciplina.find({ course: 'ECA' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'ECA' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/eca", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -73,7 +73,7 @@ router.get("/eca", (req, res) => {
 
 // Route: EMT subjects
 router.get("/emt", (req, res) => {
-    Disciplina.find({ course: 'EMT' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EMT' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/emt", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -84,7 +84,7 @@ router.get("/emt", (req, res) => {
 
 // Route: EPR subjects
 router.get("/epr", (req, res) => {
-    Disciplina.find({ course: 'EPR' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EPR' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/epr", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -95,7 +95,7 @@ router.get("/epr", (req, res) => {
 
 // Route: ESS subjects
 router.get("/ess", (req, res) => {
-    Disciplina.find({ course: 'ESS' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'ESS' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/ess", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
@@ -106,7 +106,7 @@ router.get("/ess", (req, res) => {
 
 // Route: EME subjects
 router.get("/eme", (req, res) => {
-    Disciplina.find({ course: 'EME' }).lean().sort({ name: '1' }).then((disciplinas) => {
+    Disciplina.find({ course: 'EME' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
         res.render("layouts/courses/eme", { disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")

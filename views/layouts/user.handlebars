@@ -112,6 +112,8 @@
 
           <h5><strong>Unidade Acadêmica:</strong> {{user.institute}}</h5>
 
+          <h5 name='user_status'><strong>Tipo de conta:</strong> {{user.docente}}</h5>
+
           <button style="float: right;" class="btn btn-danger" type="button" data-toggle="modal"
             data-target="#deletemodal"><i class="icon-trash icon-white"></i>
             Excluir conta
@@ -150,6 +152,16 @@
               </div>
             </div>
           </div>
+          <script>
+            function change_text() {
+              var elements = document.getElementsByName('user_status');
+              [].forEach.call(elements, function (elem) {
+                elem.textContent = elem.textContent ? elem.textContent.replace(/true/gi, 'Docente') : elem.innerText;
+                elem.textContent = elem.textContent ? elem.textContent.replace(/false/gi, 'Discente') : elem.innerText;
+              });
+            }
+            window.onload = change_text;
+          </script>
 
         </div>
       </div>
