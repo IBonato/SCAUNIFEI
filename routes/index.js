@@ -99,6 +99,9 @@ router.post("/registro", (req, res) => {
             if (user) {
                 req.flash("error_msg", "Já existe uma conta com esse e-mail cadastrada!")
                 res.redirect("/registro")
+            } else if (req.body.email.includes("@unifei.edu.br") == false) {
+                req.flash("error_msg", "Por favor use seu e-mail acadêmico '@unifei.edu.br' para realizar o cadastro!")
+                res.redirect("/registro")
             }
             else {
                 let Id = mongoose.Types.ObjectId();

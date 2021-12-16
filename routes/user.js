@@ -3,9 +3,11 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require("mongoose")
 require("../models/User")
+require("../models/Disciplina")
 require("../models/Docente")
 require("../models/Admin")
 const User = mongoose.model("users")
+const Disciplina = mongoose.model("disciplinas")
 const Docente = mongoose.model("docentes")
 const Admin = mongoose.model("admins")
 const bcrypt = require("bcryptjs")
@@ -151,7 +153,20 @@ router.post("/edit/:id", loggedin, (req, res) => {
 
 // Route: user delete account
 router.post("/delete", loggedin, (req, res) => {
-    User.findOneAndRemove({ _id: req.body.id }).then(() => {
+    Admin.findOneAndRemove({ usuario: req.body.id }).exec((err, admin) => {
+        console.log('Registro de Admin excluído: ' + admin.usuario)
+    })
+    Docente.findOneAndRemove({ usuario: req.body.id }).exec((err, docente) => {
+        console.log('Registro de Docente excluído: ' + docente.usuario)
+        Disciplina.find({ teachers: docente._id }).exec((err, disciplina) => {
+            for (let i = 0; i < disciplina.length; i++) {
+                disciplina[i].teachers.pull({ _id: docente._id }) // remove teacher from disciplina history
+                disciplina[i].save()
+            }
+        });
+    });
+    User.findOneAndRemove({ _id: req.body.id }).then((usuario) => {
+        console.log('Registro de Usuário excluído: ' + usuario._id)
         req.flash("success_msg", "Usuário removido com sucesso!")
         res.redirect("/")
     }).catch((err) => {

@@ -74,6 +74,9 @@ router.post("/adduser", isAdmin, (req, res) => {
         if (user) {
             req.flash("error_msg", "Já existe uma conta com esse e-mail ou RA cadastrada!")
             res.redirect("/admin/userslist")
+        } else if (req.body.email.includes("@unifei.edu.br") == false) {
+            req.flash("error_msg", "Por favor insira um e-mail '@unifei.edu.br' para realizar o cadastrar do usuário!")
+            res.redirect("/admin/userslist")
         }
         else {
             let Id = mongoose.Types.ObjectId();
