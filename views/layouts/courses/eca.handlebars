@@ -1,6 +1,3 @@
-<!-- Site Name -->
-<title>SCAUNIFEI - ECA</title>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -43,7 +40,7 @@
 
                 <h1>Sobre o curso</h1>
 
-                <h4><strong>Coordenador:</strong> Fadul Ferrari Rodor</h4>
+                <h4><strong>Coordenador(a):</strong> Fadul Ferrari Rodor</h4>
 
                 <h4><strong>Telefone/Ramal:</strong> (31) 3839-0856</h4>
 
@@ -55,12 +52,9 @@
                 <h4><strong>Apresentação:</strong></h4>
                 <p align="justify"> O engenheiro de controle e automação projeta e opera equipamentos utilizados nos
                     processos automatizados de indústrias em geral, além de fazer sua manutenção. Ocupa-se do
-                    gerenciamento
-                    de projetos de automação industrial e comercial. É o responsável pela programação das máquinas e
-                    pela
-                    adaptação de softwares aos processos industriais. Em empresas que já estão automatizadas,
-                    redimensiona,
-                    opera e mantém os sistemas e equipamentos já instalados.
+                    gerenciamento de projetos de automação industrial e comercial. É o responsável pela programação das
+                    máquinas e pela adaptação de softwares aos processos industriais. Em empresas que já estão
+                    automatizadas, redimensiona, opera e mantém os sistemas e equipamentos já instalados.
                 </p>
 
                 <h4><strong>Plano Pedagógico do Curso:</strong></h4>
@@ -85,10 +79,14 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>

@@ -1,6 +1,3 @@
-<!-- Site Name -->
-<title>SCAUNIFEI - EEL</title>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -43,7 +40,7 @@
 
                 <h1>Sobre o curso</h1>
 
-                <h4><strong>Coordenador:</strong> Dean Bicudo Karolak</h4>
+                <h4><strong>Coordenador(a):</strong> Dean Bicudo Karolak</h4>
 
                 <h4><strong>Telefone/Ramal:</strong> (31) 3839-0882</h4>
 
@@ -54,12 +51,11 @@
 
                 <h4><strong>Apresentação:</strong></h4>
                 <p align="justify"> O curso de Engenharia Elétrica da Universidade Federal de Itajubá campus Itabira tem
-                    por
-                    objetivo a formação de recursos humanos com sólido preparo científico e tecnológico para absorver,
-                    desenvolver, gerar e difundir conhecimentos na área de Engenharia Elétrica e em campos de atuação
-                    afins,
-                    colaborando para o desenvolvimento racional, ético e sustentável da sociedade. O foco do curso é a
-                    engenharia de potência, grande área que abrange os sistemas industriais e os sistemas de energia.
+                    por objetivo a formação de recursos humanos com sólido preparo científico e tecnológico para
+                    absorver, desenvolver, gerar e difundir conhecimentos na área de Engenharia Elétrica e em campos de
+                    atuação afins, colaborando para o desenvolvimento racional, ético e sustentável da sociedade. O foco
+                    do curso é a engenharia de potência, grande área que abrange os sistemas industriais e os sistemas
+                    de energia.
                 </p>
 
                 <h4><strong>Plano Pedagógico do Curso:</strong></h4>
@@ -84,10 +80,14 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>

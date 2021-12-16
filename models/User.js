@@ -20,9 +20,6 @@ const User = new Schema({
         unique: true,
         maxLength: 10
     },
-    birthday: {
-        type: String
-    },
     course: {
         type: String,
         maxLength: 50
@@ -49,11 +46,11 @@ const User = new Schema({
     resetPasswordExpires: {
         type: Date,
     },
-    docente: {
+    admin: {
         type: Boolean,
         default: false
     },
-    isAdmin: {
+    docente: {
         type: Boolean,
         default: false
     }

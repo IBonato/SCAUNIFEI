@@ -1,6 +1,3 @@
-<!-- Site Name -->
-<title>SCAUNIFEI - ESS</title>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -43,7 +40,7 @@
 
                 <h1>Sobre o curso</h1>
 
-                <h4><strong>Coordenador:</strong> Raoni Rocha Simões</h4>
+                <h4><strong>Coordenador(a):</strong> Raoni Rocha Simões</h4>
 
                 <h4><strong>Telefone/Ramal:</strong> (31) 3839-0886</h4>
 
@@ -54,40 +51,34 @@
 
                 <h4><strong>Apresentação:</strong></h4>
                 <p align="justify"> A engenharia de saúde e segurança é o ramo da engenharia responsável por prevenir
-                    riscos
-                    à saúde e à vida do trabalhador. o investimento em saúde e segurança no trabalho eleva o padrão de
-                    qualidade dos produtos e melhora o desempenho do trabalhador. embora existam profissionais que atuam
-                    no
-                    setor e a demanda seja grande, a formação tem acontecido basicamente em cursos de pósgraduação.
-                    trata-se, porém, de uma área que exige competências a serem mais bem desenvolvidas e em um tempo
-                    maior,
-                    ainda na graduação. o engenheiro de saúde e segurança tem a função de assegurar que o trabalhador
-                    não
-                    corra riscos em sua atividade profissional, sejam eles danos físicos ou psicológicos. o profissional
-                    administra e fiscaliza a segurança no meio industrial, organiza programas de prevenção de acidentes,
-                    elabora planos de prevenção de riscos ambientais, faz inspeções e emite laudos técnicos. estuda as
-                    condições de segurança de instalações e equipamentos, com vistas especialmente ao controle de risco,
-                    controle de poluição, higiene do trabalho, ergonomia e proteção contra incêndio. auxilia na criação
-                    de
-                    equipamentos e máquinas que respeitem as condições de segurança do trabalhador e diminuam os custos
-                    das
-                    empresas. vistoria, realiza perícias e indica medidas de controle sobre grau de exposição a agentes
-                    agressivos de riscos físicos, químicos e biológicos, caracterizando atividades, operações e locais
-                    insalubres e perigosos.orienta a comissão interna de prevenção de acidentes (cipa) das companhias e
-                    pode
-                    ministrar palestras e implementar programas de treinamento. os concursos públicos representam boa
-                    opção
-                    para os profissionais, como peritos oficiais. as áreas de produção, mineração, construção civil e
-                    setor
-                    elétrico também absorvem o profissional. além das disciplinas características dos cursos de
-                    engenharia,
-                    o currículo deve abranger: ergonomia, medicina e higiene do trabalho, toxicologia, diagnósticos de
-                    riscos no trabalho, prevenção e controle de riscos em máquinas, equipamentos e instalações,
-                    engenharia
-                    de segurança, projetos de segurança, saúde do trabalhador, psicologia na engenharia de segurança,
+                    riscos à saúde e à vida do trabalhador. O investimento em saúde e segurança no trabalho eleva o
+                    padrão de qualidade dos produtos e melhora o desempenho do trabalhador. Embora existam profissionais
+                    que atuam no setor e a demanda seja grande, a formação tem acontecido basicamente em cursos de
+                    pósgraduação. Trata-se, porém, de uma área que exige competências a serem mais bem desenvolvidas e
+                    em um tempo maior, ainda na graduação.
+
+                    <br> O engenheiro de saúde e segurança tem a função de assegurar que o trabalhador
+                    não corra riscos em sua atividade profissional, sejam eles danos físicos ou psicológicos. O
+                    profissional administra e fiscaliza a segurança no meio industrial, organiza programas de prevenção
+                    de acidentes, elabora planos de prevenção de riscos ambientais, faz inspeções e emite laudos
+                    técnicos.
+
+                    <br> Estuda as condições de segurança de instalações e equipamentos, com vistas especialmente ao
+                    controle de risco, controle de poluição, higiene do trabalho, ergonomia e proteção contra incêndio.
+                    auxilia na criação de equipamentos e máquinas que respeitem as condições de segurança do trabalhador
+                    e diminuam os custos das empresas. Vistoria, realiza perícias e indica medidas de controle sobre
+                    grau de exposição a agentes agressivos de riscos físicos, químicos e biológicos, caracterizando
+                    atividades, operações e locais insalubres e perigosos. Orienta a comissão interna de prevenção de
+                    acidentes (cipa) das companhias e pode ministrar palestras e implementar programas de treinamento.
+                    os concursos públicos representam boa opção para os profissionais, como peritos oficiais.
+
+                    <br> As áreas de produção, mineração, construção civil e setor elétrico também absorvem o
+                    profissional. Além das disciplinas características dos cursos de engenharia, o currículo deve
+                    abranger: ergonomia, medicina e higiene do trabalho, toxicologia, diagnósticos de riscos no
+                    trabalho, prevenção e controle de riscos em máquinas, equipamentos e instalações, engenharia de
+                    segurança, projetos de segurança, saúde do trabalhador, psicologia na engenharia de segurança,
                     comunicação e treinamento, legislação e normas técnicas, responsabilidade civil e criminal,
-                    perícias,
-                    gerência de riscos, entre outras.
+                    perícias, gerência de riscos, entre outras.
                 </p>
 
                 <h4><strong>Plano Pedagógico do Curso:</strong></h4>
@@ -112,10 +103,14 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>

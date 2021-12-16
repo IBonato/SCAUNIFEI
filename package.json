@@ -4,7 +4,7 @@
   "description": "Subjects web repository made with Node, Express, Passport and Mongoose.",
   "engines": {
     "node": "16.x",
-    "npm": "8.1.0"
+    "npm": "8.1.2"
   },
   "main": "app.js",
   "dependencies": {

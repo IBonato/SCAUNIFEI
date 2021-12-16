@@ -7,8 +7,13 @@ const Disciplina = mongoose.model("disciplinas")
 
 // Route: Basic subjects
 router.get("/base", (req, res) => {
-    Disciplina.find({ course: 'Base' }).lean().populate('teachers').sort({ code: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/basicas", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'Base' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ code: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/basicas", { title: 'SCAUNIFEI - Disciplinas básicas', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -18,8 +23,13 @@ router.get("/base", (req, res) => {
 
 // Route: ECO subjects
 router.get("/eco", (req, res) => {
-    Disciplina.find({ course: 'ECO' }).lean().populate('teachers').sort({ code: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/eco", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'ECO' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ code: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/eco", { title: 'SCAUNIFEI - ECO', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -29,8 +39,13 @@ router.get("/eco", (req, res) => {
 
 // Route: EEL subjects
 router.get("/eel", (req, res) => {
-    Disciplina.find({ course: 'EEL' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/eel", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EEL' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/eel", { title: 'SCAUNIFEI - EEL', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -40,8 +55,13 @@ router.get("/eel", (req, res) => {
 
 // Route: EAM subjects
 router.get("/eam", (req, res) => {
-    Disciplina.find({ course: 'EAM' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/eam", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EAM' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/eam", { title: 'SCAUNIFEI - EAM', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -51,8 +71,13 @@ router.get("/eam", (req, res) => {
 
 // Route: EMB subjects
 router.get("/emb", (req, res) => {
-    Disciplina.find({ course: 'EMB' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/emb", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EMB' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/emb", { title: 'SCAUNIFEI - EMB', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -62,8 +87,13 @@ router.get("/emb", (req, res) => {
 
 // Route: ECA subjects
 router.get("/eca", (req, res) => {
-    Disciplina.find({ course: 'ECA' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/eca", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'ECA' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/eca", { title: 'SCAUNIFEI - ECA', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -73,8 +103,13 @@ router.get("/eca", (req, res) => {
 
 // Route: EMT subjects
 router.get("/emt", (req, res) => {
-    Disciplina.find({ course: 'EMT' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/emt", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EMT' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/emt", { title: 'SCAUNIFEI - EMT', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -84,8 +119,13 @@ router.get("/emt", (req, res) => {
 
 // Route: EPR subjects
 router.get("/epr", (req, res) => {
-    Disciplina.find({ course: 'EPR' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/epr", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EPR' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/epr", { title: 'SCAUNIFEI - EPR', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -95,8 +135,13 @@ router.get("/epr", (req, res) => {
 
 // Route: ESS subjects
 router.get("/ess", (req, res) => {
-    Disciplina.find({ course: 'ESS' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/ess", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'ESS' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/ess", { title: 'SCAUNIFEI - ESS', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -106,8 +151,13 @@ router.get("/ess", (req, res) => {
 
 // Route: EME subjects
 router.get("/eme", (req, res) => {
-    Disciplina.find({ course: 'EME' }).lean().populate('teachers').sort({ name: '1' }).then((disciplinas) => {
-        res.render("layouts/courses/eme", { disciplinas: disciplinas })
+    Disciplina.find({ course: 'EME' }).lean().populate({
+        path: "teachers", // populate teachers
+        populate: {
+            path: "usuario" // in teachers, populate usuario
+        }
+    }).sort({ name: '1' }).then((disciplinas) => {
+        res.render("layouts/courses/eme", { title: 'SCAUNIFEI - EME', disciplinas: disciplinas })
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as disciplinas!")
         res.redirect("/")
@@ -117,7 +167,7 @@ router.get("/eme", (req, res) => {
 
 // Route: All courses
 router.get("/todos_cursos", (req, res) => {
-    res.render("layouts/courses/courses")
+    res.render("layouts/courses/courses", { title: 'SCAUNIFEI - Cursos' })
 });
 
 module.exports = router

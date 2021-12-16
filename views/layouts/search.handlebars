@@ -1,8 +1,3 @@
-<head>
-    <!-- Site Name -->
-    <title>SCAUNIFEI - Busca {{termo}}</title>
-</head>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -39,11 +34,17 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{name}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
+                {{else}}
+                <h2>Nenhuma disciplina cadastrada!</h2>
                 {{/each}}
             </div>
         </div>

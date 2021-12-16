@@ -1,8 +1,3 @@
-<head>
-  <!-- Site Name -->
-  <title>SCAUNIFEI - Perfil de {{user.name}}</title>
-</head>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -84,22 +79,6 @@
 
           <h5><strong>Nome:</strong> {{user.name}} {{user.surname}} </h5>
 
-
-          <h5><strong>Data de Nascimento:</strong>
-
-            <script>
-              var date = '{{user.birthday}}';
-              function FormataStringData(date) {
-                var dia = date.split("-")[2];
-                var mes = date.split("-")[1];
-                var ano = date.split("-")[0];
-
-                return ("0" + dia).slice(-2) + '/' + ("0" + mes).slice(-2) + '/' + ano;
-              }
-              document.write(FormataStringData(date))
-            </script>
-          </h5>
-
           <h5><strong>Gênero:</strong> {{user.gender}}</h5>
 
           <h5><strong>Email:</strong> {{user.email}}</h5>
@@ -112,7 +91,24 @@
 
           <h5><strong>Unidade Acadêmica:</strong> {{user.institute}}</h5>
 
-          <h5 name='user_status'><strong>Tipo de conta:</strong> {{user.docente}}</h5>
+          {{#each docente}}
+          <h5 name='user_status'><strong>Permissões de Docente:</strong> {{isActive}}</h5>
+          {{/each}}
+
+          {{#each admin}}
+          <h5 name='user_status'><strong>Permissões de Administador:</strong> {{isAdmin}}</h5>
+          {{/each}}
+
+          {{#each docente}}
+          <h3><strong>Histórico de disciplinas ministradas:</strong> </h3>
+          <p>
+            {{#each disciplinas}}
+            <a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a><br>
+            {{else}}
+            Nenhuma disciplina ministrada até o momento!
+            {{/each}}
+          </p>
+          {{/each}}
 
           <button style="float: right;" class="btn btn-danger" type="button" data-toggle="modal"
             data-target="#deletemodal"><i class="icon-trash icon-white"></i>
@@ -156,8 +152,8 @@
             function change_text() {
               var elements = document.getElementsByName('user_status');
               [].forEach.call(elements, function (elem) {
-                elem.textContent = elem.textContent ? elem.textContent.replace(/true/gi, 'Docente') : elem.innerText;
-                elem.textContent = elem.textContent ? elem.textContent.replace(/false/gi, 'Discente') : elem.innerText;
+                elem.textContent = elem.textContent ? elem.textContent.replace(/true/gi, 'Habilitado') : elem.innerText;
+                elem.textContent = elem.textContent ? elem.textContent.replace(/false/gi, 'Desabilitado') : elem.innerText;
               });
             }
             window.onload = change_text;

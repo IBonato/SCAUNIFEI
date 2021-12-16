@@ -32,7 +32,7 @@ const Disciplina = new Schema({
     },
     teachers: [{
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "docentes"
     }],
     points: {
         type: Number

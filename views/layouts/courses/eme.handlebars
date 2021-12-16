@@ -1,6 +1,3 @@
-<!-- Site Name -->
-<title>SCAUNIFEI - EME</title>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -43,7 +40,7 @@
 
                 <h1>Sobre o curso</h1>
 
-                <h4><strong>Coordenador:</strong> Rogério Fernandes Brito</h4>
+                <h4><strong>Coordenador(a):</strong> Rogério Fernandes Brito</h4>
 
                 <h4><strong>Telefone/Ramal:</strong> (31) 3839-0897</h4>
 
@@ -54,22 +51,18 @@
 
                 <h4><strong>Apresentação:</strong></h4>
                 <p align="justify"> O engenheiro mecânico poderá realizar tarefas de supervisão, elaboração e
-                    coordenação
-                    técnica de projetos de sistemas térmicos, mecânicos, hidráulicos e pneumáticos, construção de
-                    máquinas e
-                    motores, execução e fiscalização de instalações mecânicas, termodinâmicas, eletromecânicas, projetos
-                    para geração e conservação de energia térmica, nuclear e hidráulica, estudos de viabilidade
-                    econômica,
-                    assessoria e consultoria, vistorias, laudos, perícias, organização industrial mecânica, controle de
-                    vibrações e ruído, projetos de sistemas de qualidade, seleção, desenvolvimento e análise de
-                    materiais
-                    para construção mecânica, além de dedicar-se ao ensino e à pesquisa. o campo de atividades do
-                    engenheiro
-                    mecânico relaciona-se com quase todos os aspectos da tecnologia aplicada a processos industriais. o
-                    engenheiro mecânico poderá trabalhar em indústrias, companhias de energia elétrica e de petróleo,
-                    empresas de consultoria, institutos de pesquisa, instituições de ensino, área empresarial, marketing
-                    e
-                    vendas.
+                    coordenação técnica de projetos de sistemas térmicos, mecânicos, hidráulicos e pneumáticos,
+                    construção de máquinas e motores, execução e fiscalização de instalações mecânicas, termodinâmicas,
+                    eletromecânicas, projetos para geração e conservação de energia térmica, nuclear e hidráulica,
+                    estudos de viabilidade econômica, assessoria e consultoria, vistorias, laudos, perícias, organização
+                    industrial mecânica, controle de vibrações e ruído, projetos de sistemas de qualidade, seleção,
+                    desenvolvimento e análise de materiais para construção mecânica, além de dedicar-se ao ensino e à
+                    pesquisa.
+
+                    <br> O campo de atividades do engenheiro mecânico relaciona-se com quase todos os aspectos da
+                    tecnologia aplicada a processos industriais. O engenheiro mecânico poderá trabalhar em indústrias,
+                    companhias de energia elétrica e de petróleo, empresas de consultoria, institutos de pesquisa,
+                    instituições de ensino, área empresarial, marketing e vendas.
                 </p>
 
                 <h4><strong>Plano Pedagógico do Curso:</strong></h4>
@@ -94,10 +87,14 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>

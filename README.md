@@ -43,7 +43,7 @@ mongod
 
 * Create a new database and admin:
 
-```bash
+```sql
 mongo
 
 use nameofthedatabase
@@ -56,7 +56,25 @@ db.createUser(
 )
 ```
 
-* Create the files ```drive_key.json``` and ```gmail_key.json``` in the folder ```config/google``` containing the data for authentication with Google APIs.
+* Create the files ```drive_key.json``` and ```gmail_key.json``` in the folder ```config/google``` containing the data for authentication with Google APIs, or set it with a ```.env``` file like the following:
+
+```bash
+# GMail OAuth2 API information
+OAUTH_CLIENT_ID_GMAIL = CLIENT_ID
+OAUTH_SECRET_GMAIL = SECRET
+GMAIL_REFRESH_TOKEN = TOKEN
+# Service account
+OAUTH_SERVICE_ID_GMAIL = SERVICE_ID
+OAUTH_SERVICE_PRIVATE_KEY_GMAIL = -----BEGIN PRIVATE KEY-----\n KEY \n-----END PRIVATE KEY-----\n
+
+# GDrive OAuth2 API information
+OAUTH_CLIENT_ID_DRIVE = CLIENT_ID
+OAUTH_SECRET_DRIVE = SECRET
+DRIVE_REFRESH_TOKEN = TOKEN
+# Service account
+OAUTH_SERVICE_ID_GMAIL = SERVICE_ID
+OAUTH_SERVICE_PRIVATE_KEY_GMAIL = -----BEGIN PRIVATE KEY-----\n KEY \n-----END PRIVATE KEY-----\n
+```
 
 * Start the application in another terminal window (```nodemon``` will automatically restart your application every time you make a change in any ```.js``` file and save it, if you don't have the package, you can install it globally on your computer with ```npm install -g nodemon```):
 

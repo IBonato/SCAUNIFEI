@@ -1,8 +1,3 @@
-<head>
-  <!-- Site Name -->
-  <title>SCAUNIFEI - Registro</title>
-</head>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -29,8 +24,8 @@
         <div class="text-center">
           <h2>Registre-se</h2>
           <p>
-            Crie uma conta para que você possa ver os dados de usuários da plataforma e seguir suas disciplinas
-            favoritas!
+            Crie uma conta para que você possa comentar e deixar dúvidas em suas disciplinas favoritas! E caso seja um
+            professor, para poder fazer o <i>upload</i> de conteúdo aos alunos de suas disciplinas.
           </p>
         </div>
 
@@ -59,7 +54,8 @@
               <div class="text-left">
                 <label for="email" class="control-label">Email:</label>
               </div>
-              <input type="email" class="input-block-level" name="email" placeholder="Insira o seu email" required>
+              <input type="text" class="input-block-level" name="email" placeholder="Insira o seu email da UNIFEI"
+                pattern="([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@unifei([\.])edu([\.])br" required>
             </div>
 
             <div class="span6 form-group">
@@ -103,13 +99,6 @@
                 <option value="EEL - Engenharia Elétrica">Engenharia Elétrica (EEL)</option>
                 <option value="EME - Engenharia Mecânica">Engenharia Mecânica (EME)</option>
               </select>
-            </div>
-
-            <div class="span6 form-group">
-              <div class="text-left">
-                <label for="birthday">Data de Nascimento:</label>
-              </div>
-              <input type="date" class="input-block-level" name="birthday" required>
             </div>
 
             <div class="span6 form-group">

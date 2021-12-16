@@ -3,17 +3,23 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require("mongoose")
 require("../models/User")
+require("../models/Docente")
+require("../models/Admin")
 const User = mongoose.model("users")
+const Docente = mongoose.model("docentes")
+const Admin = mongoose.model("admins")
 const bcrypt = require("bcryptjs")
-const moment = require("moment")
 const { loggedin } = require("../helpers/loggedin")
 
 //----------------------------------------------USER MANAGEMENT ROUTES-------------------------------------------------
 
 // Route: logged user page
 router.get("/", loggedin, (req, res) => {
-    User.find().lean().then((users) => {
-        res.render("layouts/user", { users: users })
+    User.findOne({ _id: req.user._id }).lean().then(async (user) => {
+        let title = 'SCAUNIFEI - Perfil de ' + user.name
+        let docente = await Docente.find({ usuario: user._id }).lean().populate('disciplinas')
+        let admin = await Admin.find({ usuario: user._id }).lean()
+        res.render("layouts/user", { title: title, user: user, docente: docente, admin: admin })
     }).catch((err) => {
         console.log(err)
         req.flash("error_msg", "Houve um erro ao listar os dados do usuário!")
@@ -24,8 +30,8 @@ router.get("/", loggedin, (req, res) => {
 // Route: user get edit page
 router.get("/edit/:id", loggedin, (req, res) => {
     User.findOne({ _id: req.params.id }).lean().then((user) => {
-        let birthday = moment(user.birthday).utc().format("YYYY-MM-DD")
-        res.render("layouts/user_edit", { user: user, birthday: birthday })
+        let title = 'SCAUNIFEI - Editar dados de ' + user.name
+        res.render("layouts/user_edit", { title: title, user: user })
     }).catch((err) => {
         req.flash("error_msg", "Erro interno!")
         res.redirect("/user")
@@ -93,9 +99,6 @@ router.post("/edit/:id", loggedin, (req, res) => {
             if (req.body.course != user.course)
                 user.course = req.body.course
 
-            if (req.body.birthday != user.birthday)
-                user.birthday = req.body.birthday
-
             if (req.body.gender != user.gender)
                 user.gender = req.body.gender
 
@@ -138,7 +141,6 @@ router.post("/edit/:id", loggedin, (req, res) => {
                     res.redirect("/user")
                 }
             })
-
         }).catch((err) => {
             req.flash("error_msg", "Erro ao editar dados do usuário!")
             res.redirect("/user")

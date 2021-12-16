@@ -1,6 +1,3 @@
-<!-- Site Name -->
-<title>SCAUNIFEI - EPR</title>
-
 <!-- Subintro
 ================================================== -->
 <section id="subintro">
@@ -43,7 +40,7 @@
 
                 <h1>Sobre o curso</h1>
 
-                <h4><strong>Coordenador:</strong> Henrique Duarte Carvalho</h4>
+                <h4><strong>Coordenador(a):</strong> Henrique Duarte Carvalho</h4>
 
                 <h4><strong>Telefone/Ramal:</strong> (31) 3839-0892</h4>
 
@@ -54,22 +51,17 @@
 
                 <h4><strong>Apresentação:</strong></h4>
                 <p align="justify"> O engenheiro de produção necessita de sólida formação matemática, tecnológica,
-                    econômica
-                    e social. suas atividades incluem escolha de processos, administração do trabalho, segurança,
-                    projeto do
-                    produto, gestão ambiental, gestão da produção e da manutenção, de tal forma a produzir bens e
-                    serviços
-                    com qualidade, na quantidade requerida, no prazo estimado e a um preço competitivo. neste contexto,
-                    o
-                    papel do recém-formado é o de ativa participação nos esforços de desenvolvimento de sua comunidade e
-                    região. dessa forma, objetiva-se a formação de profissional competente e responsável, apto a atender
-                    às
-                    crescentes e variáveis demandas impostas pelas mudanças tecnológicas, sociais e econômicas. uma das
-                    características que se espera do profissional refere-se a sua capacidade de atuar como elemento
-                    gerador
-                    de oportunidades através de elementos de educação empreendedora constantes na abordagem pedagógica
-                    do
-                    curso.
+                    econômica e social. Suas atividades incluem escolha de processos, administração do trabalho,
+                    segurança, projeto do produto, gestão ambiental, gestão da produção e da manutenção, de tal forma a
+                    produzir bens e serviços com qualidade, na quantidade requerida, no prazo estimado e a um preço
+                    competitivo.
+
+                    <br> Neste contexto, o papel do recém-formado é o de ativa participação nos esforços de
+                    desenvolvimento de sua comunidade e região. Dessa forma, objetiva-se a formação de profissional
+                    competente e responsável, apto a atender às crescentes e variáveis demandas impostas pelas mudanças
+                    tecnológicas, sociais e econômicas. Uma das características que se espera do profissional refere-se
+                    a sua capacidade de atuar como elemento gerador de oportunidades através de elementos de educação
+                    empreendedora constantes na abordagem pedagógica do curso.
                 </p>
 
                 <h4><strong>Plano Pedagógico do Curso:</strong></h4>
@@ -94,10 +86,14 @@
             <div class="center">
                 {{#each disciplinas}}
                 <div class="li span4" style="margin-bottom: 1rem!important;">
-                    <h5><a href="/disciplina/{{code}}" target="_blank">{{code}} - {{name}}</a></h5>
-                    <a href="/disciplina/{{code}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
-                            style="width:256px;height:256px;" class="lazyload"></a> <br> <br>
-                    <p>Professor: <b>{{teachers.0.name}} {{teachers.0.surname}}</b></p>
+                    <h5><a href="/disciplina/{{_id}}" target="_blank">{{code}} - {{name}}</a></h5>
+                    <a href="/disciplina/{{_id}}" target="_blank"><img data-src="{{cover}}" alt="{{code}}"
+                            style="width:200px;height:300px;" class="lazyload"></a> <br> <br>
+                    {{#with teachers.[0]}}
+                    {{#with usuario}}
+                    <p>Professor: <b>{{name}} {{surname}}</b></p>
+                    {{/with}}
+                    {{/with}}
                 </div>
                 {{else}}
                 <h2>Nenhuma disciplina cadastrada!</h2>
