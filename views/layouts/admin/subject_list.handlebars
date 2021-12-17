@@ -258,7 +258,7 @@
                     <script>
                         function add_fields() {
                             var x = parseInt($('#new_fields').val()) + 1;
-                            document.getElementById('addteachers').innerHTML += "<select class='input-block-level' name='teachers[" + x + "]'> <option value=''>- Selecione -</option> {{#each docentes}} <option value='{{_id}}'>{{#with usuario}} {{name}} {{surname}} ({{course}}){{/with}} </option> {{else}} <option disabled selected>Nenhum professor cadastrado!</option> {{/each}} </select>";
+                            document.getElementById('addteachers').innerHTML += "<select class='input-block-level' name='teachers[" + x + "]'> <option value='000000000000000000000000'>- Selecione -</option> {{#each docentes}} <option value='{{_id}}'>{{#with usuario}} {{name}} {{surname}} ({{course}}){{/with}} </option> {{else}} <option disabled selected>Nenhum professor cadastrado!</option> {{/each}} </select>";
                             $('#new_fields').val(x);
                         }
                     </script>
