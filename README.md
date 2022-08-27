@@ -1,6 +1,6 @@
 # SCAUNIFEI
 
-File sharing system made in Node.js with MongoDB, supporting user register, edit and delete, file upload (by selected users) and download and search by multiple standards. You can see the deployed version on Heroku here: [SCAUNIFEI](https://scaunifei.herokuapp.com).
+File sharing system made in Node.js with MongoDB, supporting user register, edit and delete, file upload (by selected users) and download and search by multiple standards.
 
 ## Installation
 
